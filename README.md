@@ -4,26 +4,49 @@ Aguiar Adnery,
 Espinoza Parrales,
 Mateo Chelsea
 
-# Gestión ineficiente del inventario en una pequeña empresa de alimentos
+---
 
+## 1. Contexto del Problema 
+**Descripción del problema:** Actualmente, el registro de información académica en muchas instituciones se realiza de forma manual mediante cuadernos o archivos físicos. Esto genera una alta vulnerabilidad a la pérdida de datos, duplicidad de registros y una ineficiencia crítica al momento de buscar o actualizar información de un estudiante específico.
 
-Una pequeña empresa dedicada a la producción y venta de alimentos enfrenta dificultades significativas en la gestión de su inventario. Actualmente, la información sobre las materias primas, productos terminados, y ventas se maneja de forma manual y dispersa en diferentes hojas de cálculo y documentos físicos, sin un sistema integrado que permita un control efectivo.
+**Importancia:** La digitalización de estos procesos es vital para garantizar la integridad de la información y reducir los tiempos de respuesta administrativa.
 
-# Estos problemas ocasionan:
+**Contexto de uso:** La aplicación está diseñada para ser utilizada por personal administrativo o docentes en un entorno escolar, proporcionando una interfaz gráfica (GUI) intuitiva que no requiere conocimientos técnicos avanzados para su operación.
 
-Errores en el registro de entradas y salidas: La falta de actualización en tiempo real genera inconsistencias en las cantidades disponibles.
-Desperdicio y pérdidas económicas: Por falta de control adecuado, algunos productos perecederos se vencen o se pierden sin ser detectados a tiempo.
-Dificultad para planificar compras: Sin datos precisos, la empresa no puede anticipar adecuadamente la necesidad de reabastecimiento, afectando la producción y ventas.
-Reportes imprecisos: La ausencia de un sistema centralizado impide generar reportes confiables sobre el estado del inventario, ventas y tendencias.
-Retrasos en la toma de decisiones: La gerencia no cuenta con información actualizada para tomar decisiones rápidas y acertadas.
+---
 
-# Necesidad
+## 2. Análisis de Requerimientos 
+El sistema implementa las siguientes funcionalidades principales, alineadas a las necesidades del usuario:
 
-Se requiere diseñar un sistema de base de datos que centralice y organice toda la información relacionada con el inventario y ventas, para:
-Mantener un control preciso y actualizado del inventario.
-Registrar correctamente las entradas, salidas y pérdidas de productos.
-Facilitar la planificación de compras y producción.
-Generar reportes que apoyen la gestión eficiente del negocio.
-Mejorar la toma de decisiones basadas en datos reales y confiables.
+* **Registro Automatizado:** Captura de datos esenciales (Nombre, ID, Edad, Curso) a través de un formulario gráfico.
+* **Validación de Datos en Tiempo Real:** Implementación de manejo de excepciones (`try-catch`) para asegurar que campos como la 'Edad' solo acepten valores numéricos, evitando errores de ejecución.
+* **Almacenamiento Dinámico:** Uso de la estructura de datos `ArrayList` para gestionar objetos de la clase `Estudiante` de forma eficiente en la memoria volátil.
+* **Visualización Estructurada:** Presentación inmediata de los datos registrados en un componente `JTable`, permitiendo una auditoría visual rápida de los registros.
 
-Este proyecto se enfocará en la creación de un modelo físico en MySQL que permita cubrir estas necesidades y mejorar significativamente la gestión del inventario y ventas de la empresa.
+---
+
+## 3. Diagrama de Flujo de la Aplicación 
+El flujo del sistema garantiza que no existan procesos huérfanos y que el usuario siempre tenga el control:
+
+1.  **Inicio:** Ejecución de la clase `FrmPrincipal`.
+2.  **Ingreso de Datos:** El usuario completa los campos del formulario.
+3.  **Validación:** El sistema verifica si los datos son correctos (ej. Edad es número).
+    * *Si es incorrecto:* Muestra un mensaje de error y retorna al formulario.
+    * *Si es correcto:* Crea el objeto `Estudiante`, lo añade al `ArrayList` y actualiza la tabla.
+4.  **Fin/Ciclo:** El usuario puede realizar un nuevo registro o cerrar la aplicación.
+
+*(Aquí deberías subir la imagen de tu diagrama de flujo para que sea visible directamente en GitHub)*
+
+---
+
+## 4. Diseño de Interfaz y Validaciones 
+La interfaz se desarrolló utilizando **Java Swing**, cumpliendo con los estándares de diseño adecuado:
+* **Componentes:** Uso de `JLabel`, `JTextField`, `JButton` y `JScrollPane` con coordenadas precisas para una visualización limpia.
+* **Validaciones:** El sistema incluye diálogos de alerta (`JOptionPane`) para informar al usuario sobre el éxito del registro o errores de entrada de datos.
+
+---
+
+## 5. Acceso a Datos y Funcionalidades Clave 
+El proyecto cumple con el uso correcto de estructuras de datos orientadas a objetos:
+* **Clase Estudiante:** Define el modelo de datos con encapsulamiento.
+* **Colecciones:** El uso de `ArrayList<Estudiante>` permite un manejo de datos alineado totalmente con la propuesta y el diagrama de flujo presentado.
