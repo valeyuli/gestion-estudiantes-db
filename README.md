@@ -35,7 +35,7 @@ El flujo del sistema garantiza que no existan procesos huérfanos y que el usuar
     * *Si es correcto:* Crea el objeto `Estudiante`, lo añade al `ArrayList` y actualiza la tabla.
 4.  **Fin/Ciclo:** El usuario puede realizar un nuevo registro o cerrar la aplicación.
 
-*(Aquí deberías subir la imagen de tu diagrama de flujo para que sea visible directamente en GitHub)*
+
 
 ---
 
